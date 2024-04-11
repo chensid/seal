@@ -46,7 +46,7 @@ const router = createRouter({
 			name: "package",
 			meta: { title: "套餐详情" },
 			component: () => import("@/views/package/index.vue"),
-		}
+		},
 	],
 });
 

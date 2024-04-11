@@ -6,20 +6,22 @@ const route = useRoute();
 const router = useRouter();
 const title: string = (route.meta.title as string) || "";
 
-const tabActive = ref(0)
+const tabActive = ref(0);
 
 const handleBuy = () => {
-    // @ts-ignore
-    showConfirmDialog({
-        message: '认证后才可购买套餐！',
-        cancelButtonText: '取消',
-        confirmButtonText: '去认证',
-    }).then(() => {
-        router.push({ path: '/authentication' })
-    }).catch(() => {
-        // on cancel
-    });
-}
+	// @ts-ignore
+	showConfirmDialog({
+		message: "认证后才可购买套餐！",
+		cancelButtonText: "取消",
+		confirmButtonText: "去认证",
+	})
+		.then(() => {
+			router.push({ path: "/authentication" });
+		})
+		.catch(() => {
+			// on cancel
+		});
+};
 </script>
 <template>
     <van-nav-bar :title="title" left-arrow @click-left="() => router.back()" />

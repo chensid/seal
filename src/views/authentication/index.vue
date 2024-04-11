@@ -9,7 +9,6 @@ const title: string = (route.meta.title as string) || "";
 const realName = ref("");
 const idCode = ref("");
 const phone = ref("");
-
 </script>
 <template>
     <van-nav-bar :title="title" left-arrow @click-left="() => router.back()" />

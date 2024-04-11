@@ -13,36 +13,38 @@ const deadline = ref<string>(dayjs().endOf("day").format("YYYY-MM-DD HH:mm:ss"))
 
 const showPicker = ref(false);
 const formatter = (type: string, option: PickerOption) => {
-    if (type === "year") {
-        option.text += "年";
-    }
-    if (type === "month") {
-        option.text += "月";
-    }
-    if (type === "day") {
-        option.text += "日";
-    }
-    return option;
+	if (type === "year") {
+		option.text += "年";
+	}
+	if (type === "month") {
+		option.text += "月";
+	}
+	if (type === "day") {
+		option.text += "日";
+	}
+	return option;
 };
 const onConfirm = ({ selectedValues }: { selectedValues: string[] }) => {
-    const datetime = dayjs(selectedValues.join("-")).endOf("day").format("YYYY-MM-DD HH:mm:ss");
-    deadline.value = datetime;
-    showPicker.value = false;
+	const datetime = dayjs(selectedValues.join("-")).endOf("day").format("YYYY-MM-DD HH:mm:ss");
+	deadline.value = datetime;
+	showPicker.value = false;
 };
 
 const handleSelect = () => {
-    // @ts-ignore
-    showConfirmDialog({
-        title: '认证提醒',
-        message: '签署前需要完成个人认证，方可进行下一步操作',
-        cancelButtonText: '算了',
-        confirmButtonText: '去认证',
-    }).then(() => {
-        router.push({ path: '/authentication' })
-    }).catch(() => {
-        // on cancel
-    });
-}
+	// @ts-ignore
+	showConfirmDialog({
+		title: "认证提醒",
+		message: "签署前需要完成个人认证，方可进行下一步操作",
+		cancelButtonText: "算了",
+		confirmButtonText: "去认证",
+	})
+		.then(() => {
+			router.push({ path: "/authentication" });
+		})
+		.catch(() => {
+			// on cancel
+		});
+};
 </script>
 <template>
     <van-nav-bar :title="title" left-arrow @click-left="() => router.back()" />
