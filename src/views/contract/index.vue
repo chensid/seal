@@ -3,7 +3,6 @@ import { ref, watch } from "vue";
 
 const tabActive = ref(0);
 const active = ref(1);
-
 </script>
 
 <template>

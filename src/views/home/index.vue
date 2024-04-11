@@ -2,7 +2,6 @@
 import { ref } from "vue";
 
 const active = ref(0);
-
 </script>
 
 <template>
