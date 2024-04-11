@@ -1,0 +1,19 @@
+:root {
+  --van-white: #fff;
+  --van-blue: #1989fa;
+  --van-button-primary-color: var(--van-white);
+  --van-button-primary-background: var(--van-primary-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#app {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #eff2f5;
+}
