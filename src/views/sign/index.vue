@@ -103,6 +103,7 @@ const handleSelect = () => {
     flex-direction: column;
     gap: 20px;
     padding-block: 20px;
+    overflow: auto;
 
     .select {
         padding: 20px;

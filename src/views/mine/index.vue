@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import cat from "@/assets/cat.webp";
 import { ref } from "vue";
 
 const active = ref(2);
@@ -8,7 +9,7 @@ const active = ref(2);
   <div class="container">
     <div class="personal">
       <div class="personalInfo">
-        <van-image class="avatar" width="80" height="80" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
+        <van-image class="avatar" width="80" height="80" :src="cat" />
         <div class="info">
           <span>133****3333</span>
           <van-button icon="award-o" round plain hairline type="primary" size="mini" to="/authentication">

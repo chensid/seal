@@ -88,7 +88,7 @@ const active = ref(1);
 
     .sign {
         position: fixed;
-        bottom: 80px;
+        bottom: 10%;
         width: 95%;
     }
 }
