@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const active = ref(0);
+
+const handleToTemplate = () => {
+	router.push({ path: "/template" });
+};
 </script>
 
 <template>
@@ -16,12 +22,28 @@ const active = ref(0);
     </van-swipe>
 
     <van-grid :column-num="3" clickable>
-      <van-grid-item icon="photo-o" text="待我处理" />
-      <van-grid-item icon="photo-o" text="待他人处理" />
-      <van-grid-item icon="photo-o" text="签署合同" />
+      <van-grid-item :to="{ path: '/contract', query: {index: 1} }">
+        <div class="panel-item">
+          <span class="item-num">0</span>
+          <span>待我处理</span>
+        </div>
+      </van-grid-item>
+      <van-grid-item :to="{ path: '/contract', query: {index: 2} }">
+        <div class="panel-item">
+          <span class="item-num">0</span>
+          <span>待他人处理</span>
+        </div>
+      </van-grid-item>
+      <van-grid-item to="/sign">
+        <div class="panel-item">
+          <van-icon name="sign" size="32" color="#1989fa" />
+          <span>签署合同</span>
+        </div>
+      </van-grid-item>
     </van-grid>
-    <van-image class="ad" fit="cover" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
-
+    <van-image class="ad" fit="cover" src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+      @click="handleToTemplate" />
+    <van-cell class="more" title="近期合同" is-link value="更多" to="/contract" />
     <van-empty image="search" description="暂无数据~" />
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" to="/"> 首页 </van-tabbar-item>
@@ -40,13 +62,30 @@ const active = ref(0);
 
   .swipe {
     border-radius: 8px;
-    height: 200px;
+    height: 150px;
+  }
+
+  .panel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    .item-num {
+      color: #1989fa;
+      font-size: 24px;
+    }
   }
 
   .ad {
     width: 100%;
     height: 100px;
     cursor: pointer;
+  }
+
+  .more {
+    background-color: transparent;
+    padding-inline: 3px;
   }
 }
 </style>

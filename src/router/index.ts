@@ -23,6 +23,30 @@ const router = createRouter({
 			meta: { title: "我的" },
 			component: () => import("@/views/mine/index.vue"),
 		},
+		{
+			path: "/template",
+			name: "template",
+			meta: { title: "合同范本" },
+			component: () => import("@/views/template/index.vue"),
+		},
+		{
+			path: "/sign",
+			name: "sign",
+			meta: { title: "发起签署" },
+			component: () => import("@/views/sign/index.vue"),
+		},
+		{
+			path: "/authentication",
+			name: "authentication",
+			meta: { title: "个人认证" },
+			component: () => import("@/views/authentication/index.vue"),
+		},
+		{
+			path: "/package",
+			name: "package",
+			meta: { title: "套餐详情" },
+			component: () => import("@/views/package/index.vue"),
+		}
 	],
 });
 

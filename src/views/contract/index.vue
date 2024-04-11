@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import { useRoute } from "vue-router";
 
 const tabActive = ref(0);
+const route = useRoute();
+const { index } = route.query;
+tabActive.value = index ? Number(index) : 0;
+
 const active = ref(1);
 </script>
 
@@ -65,7 +70,7 @@ const active = ref(1);
                 <van-empty image="search" description="暂无数据~" />
             </van-tab>
         </van-tabs>
-        <van-button class="sign" type="primary" to="/about" block>签署合同</van-button>
+        <van-button class="sign" type="primary" to="/sign" block>签署合同</van-button>
         <van-tabbar v-model="active">
             <van-tabbar-item icon="home-o" to="/"> 首页 </van-tabbar-item>
             <van-tabbar-item icon="label-o" to="/contract"> 合同 </van-tabbar-item>
