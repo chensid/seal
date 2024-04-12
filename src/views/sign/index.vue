@@ -101,8 +101,8 @@ const handleSelect = () => {
     height: calc(100% - var(--van-nav-bar-height));
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-block: 20px;
+    gap: 15px;
+    padding-block: 15px;
     overflow: auto;
 
     .select {

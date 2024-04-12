@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import zero from "@/assets/0.webp";
 import one from "@/assets/1.webp";
+import banner from "@/assets/banner.webp"
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -43,7 +44,7 @@ const handleToTemplate = () => {
         </div>
       </van-grid-item>
     </van-grid>
-    <van-image class="ad" fit="cover" :src="one"
+    <van-image class="ad" fit="cover" :src="banner"
       @click="handleToTemplate" />
     <van-cell class="more" title="近期合同" is-link value="更多" to="/contract" />
     <van-empty image="search" description="暂无数据~" />
